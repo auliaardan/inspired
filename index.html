@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Inspired with Ardan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Very messy code, Going to Fix this, My VS somehow cannot save the CSS file*/
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        @media screen and (max-width: 769px) {
+
+            .boxer {
+                margin-right: 5px;
+                margin-left: 5px;
+            }
+
+            .container {
+                padding: 50px 35px !important;
+                font-size: 14px !important;
+                line-height: 20px !important;
+            }
+
+            .special {
+                display: none;
+            }
+
+            .phone-alt {
+                display: block !important;
+            }
+        }
+
+        .parallex {
+            position: relative;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .toppart {
+            background-image: url("img/People.jpg");
+            min-height: 100%;
+        }
+
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+        }
+
+        .boxer {
+            display: inline-block;
+            background-color: rgb(105, 105, 105);
+            border-radius: 4px;
+            opacity: 0.8;
+        }
+
+            .boxer a {
+                font-size: 18px;
+                text-align: center;
+                line-height: 25px;
+                letter-spacing: 10px;
+                padding: 15px 10px;
+                color: white;
+                display: block;
+                cursor: pointer;
+            }
+
+                .boxer a:hover {
+                    background-color: black;
+                }
+
+        .face {
+            margin: 0 auto;
+            display: block;
+            height: 250px;
+            width: 250px;
+            margin-bottom: 15px;
+        }
+
+        .container {
+            padding: 50px 80px;
+        }
+
+            .container p {
+                text-align: justify;
+            }
+
+        .mid-top {
+            background-image: url("img/Ship.jpg");
+            min-height: 500px;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .page {
+            display: none;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.3)
+        }
+
+        .next {
+            right: 5.856%;
+            border-radius: 3px 0 0 3px;
+        }
+
+            .prev:hover, .next:hover {
+                background-color: rgba(0,0,0,0.8);
+            }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .icon {
+            margin-right: 15px;
+            flex: auto;
+            text-align: center;
+        }
+
+            .icon img {
+                display: block;
+                height: 250px;
+                width: 250px;
+                margin: 0 auto;
+            }
+
+        .icon-text {
+            width: 100%;
+            margin-top: 15px;
+            font-size: 20px;
+        }
+
+        .special {
+            position: relative;
+        }
+
+        .flex-list {
+            display: flex;
+            width: 100%;
+            padding: 10px 10px 10px 10px;
+        }
+
+        .question-block {
+            background-color: lightslategrey;
+            position: relative;
+            width: 250px;
+        }
+
+        .question-text {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            color: white;
+            font-size: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .phone-alt {
+            display: none;
+        }
+
+        .mid-bot {
+            background-image: url("img/Sea.jpg");
+            min-height: 75%;
+        }
+
+        .bot {
+            background-image: url("img/topBG.jpg");
+            min-height: 100%;
+        }
+
+        /* coloring of container here*/
+        .first {
+            background-color: rgb(255 255 255);
+            color: rgb(100 100 100);
+        }
+
+        .second {
+            background-color: rgb(197 197 197);
+            color: white;
+        }
+
+        .third {
+            background-color: rgb(100 100 100);
+            color: rgb(255 255 255);
+        }
+
+        .footer {
+            background-color: rgb(100 100 100);
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        /* FOOTER CONTENTS*/
+        .btn {
+            padding: 12px 24px;
+            color: white;
+            display: inline-block;
+            opacity: 0.95;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .btn-wrapper{
+            padding-bottom: 10px;   
+        }
+
+        .main-menu {
+            padding: 15px 40px;
+            background-color: rgb(140,140, 140);
+            cursor: pointer;
+            box-shadow: 0 7px rgb(35, 35, 35);
+        }
+
+            .main-menu:active {
+                position: relative;
+                top: 7px;
+                box-shadow: none;
+            }
+
+        /* ENDS HERE*/
+    </style>
+</head>
+<body>
+    <div class="parallex toppart">
+        <div class="caption">
+            <img src="img/Face.png" class="face" href="#" />
+            <div class="boxer">
+                <a href="https://www.linkedin.com/in/aulia-rahman-ardan-361a66141/">
+                    Aulia Rahman Ardan
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container first">
+        <h3 style="text-align:center">About me:</h3>
+        <p>
+            Inspirations knows no bound, and I am always thriving to learn new things. The best place to get inspired is in Indonesia, the soil where I was born and raised. Till date, I have acquired many new knowledges in medicine and healthcare while expanding my wings in programming, data science and machine learning. I am currently studying in the Faculty of Medicine in University of Indonesia. Additionally, I have completed my double degree for Bachelor of Biomedical Science in Melbourne University where I have learned different insights particularly on research and biostatistics.<br>My love for technology dates way back and it kicked-off with a harmless joke for my friends by creating a <span style="font-style:italic;">phishy</span> website. For the past 2 years I have dedicated myself to learn different programming languages. Learning programming was not an easy task due to my filled schedule as a medical student however my thirst of knowledge enabled me to practice both the art of medicine and programming. Different organizational skill sets were obtained through several events that I helped organized, particularly the most memorable one was Open House FKUI 2018 where I was the project officer. My main area of interest is game development, data science and web development with a side hobby of IoT projects. However, I am open to other areas that may further strengthen and apply my programming knowledge.  If learning was a pit, I would fall in love with programming and data’s all over again. I am always seeking for new opportunities that may further my skillsets, and for collaborations with like-minded people.
+            <br />I hope this this page will inspire you
+        </p>
+    </div>
+
+    <div class="parallex mid-top">
+    </div>
+
+    <div class="container special second">
+        <div class="header">
+            <h3>Current skills:</h3>
+        </div>
+        <div class="slide-container">
+            <div class="page fade">
+                <div class="flex-list">
+                    <div class="icon">
+                        <img src="img/medicine.png" />
+                        <div class="icon-text">
+                            Medicine
+                        </div>
+                    </div>
+
+                    <div class="icon">
+                        <img src="img/dataScience.png" />
+                        <div class="icon-text">
+                            Data visualization<br />Machine learning<br>Data mining
+                        </div>
+                    </div>
+
+                    <div class="icon">
+                        <img src="img/problem.png" />
+                        <div class="icon-text">
+                            C# Python<br />Game development<br />Data algorithms
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page fade">
+                <div class="flex-list">
+                    <div class="icon">
+                        <img src="img/Biostatistics.png" />
+                        <div class="icon-text">
+                            Bio-statistics
+                        </div>
+                    </div>
+
+                    <div class="icon">
+                        <img src="img/webDev.png" />
+                        <div class="icon-text">
+                            Web development<br />HTML & CSS<br />Node.JS & JS
+                        </div>
+                    </div>
+
+                    <div class="icon question-block">
+                        <div class="question-text">
+                            And many more to come...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("page");
+            console.log(slides);
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
+
+    <div class="container phone-alt second">
+        <h3 style="text-align:center">Current skills:</h3>
+        <p>
+            I can solve problems with python and C#, especially those regarding data and algorithms. I am currently enhancing my knowledge in machine learning using binary search tree, image classification and many more. Developing games is one of my favourite hobbies using C# as its core. I am confident in my skills to develop web applications that is according to the needs of the end-user. I will never stop learning, and many more skills will be acquired.
+        </p>
+    </div>
+
+    <div class="parallex mid-bot">
+    </div>
+
+    <div class="container third">
+        <h3 style="text-align:center">Goals:</h3>
+        <p style="text-align: center;">
+            1.	Create new opportunities for myself and for many people<br />
+            2.	Inspire people<br />
+            3.	Lifelong learning
+        </p>
+    </div>
+
+    <div class="parallex bot">
+    </div>
+
+    <div class="footer">
+        <h3 style="color: white; padding-top: 10px; margin-top: 0;">Many more features incoming, including tutorials!</h3>
+        <div class="btn-wrapper">
+            <a href="#"><span class="btn main-menu">Coming soon!</span></a>
+        </div>
+    </div>
+</body>
+</html>
